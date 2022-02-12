@@ -83,7 +83,7 @@ body {
   display: block;
   position: absolute;
   z-index: 2000;
-  bottom: 0; 
+  bottom: -3px; 
 }
 
 .footer p {
