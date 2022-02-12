@@ -6,9 +6,11 @@ const firstQuoteObj = [
 ];
 JSON.stringify(firstQuoteObj);
 
+// settings values to variables
 let firstQuoteStr = firstQuoteObj[0].text;
 let firstQuoteAuth = "- " + firstQuoteObj[0].author;
 
+// arrays to be mapped
 const quoteArray = firstQuoteStr.split(" ");
 const spacerQuoteArray = [
   "%20",
@@ -139,23 +141,35 @@ const spacerQuoteArray = [
   "%20",
 ];
 
+// combines the arrays
 var arrayCombined = $.map(quoteArray, function (stringVal, index) {
   return [stringVal, spacerQuoteArray[index]];
 });
 
+// string to be used in get request
 let callString = arrayCombined.join("");
 console.log(callString);
 
-let apiUrl = "https://api.funtranslations.com/translate/yoda.json?text=";
+// get randomg persons to use it get request
+var persons = ["yoda", "chef"];
+var person = persons[Math.floor(Math.random() * persons.length)];
+console.log(person);
 
+// url to use in get request
+let apiUrl =
+  "https://api.funtranslations.com/translate/" + person + ".json?text=";
+
+// get request
 let fetchFinalQuote = function () {
   fetch(apiUrl + callString).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data);
+        console.log(data.contents.translated);
       });
     }
   });
 };
+
+// print quote and author to page
 
 fetchFinalQuote();
