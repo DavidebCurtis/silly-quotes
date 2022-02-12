@@ -5,8 +5,8 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
-  background-color: #655D8A;
-  height: 80vh;
+  background: #655D8A;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,26 +22,27 @@ body {
   margin-bottom: 30px;
   border: 5px solid black;
   border-radius: 10px;
+  
 
 }
 .quote-wrapper .quote-heading h2 {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 800;
-  background-color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS' sans-serif;
+  font-weight: 900;
+  background-color: #ddd;
   border-radius: 5px;
   padding: 10px;
   color: #162f3f;
+  text-shadow: 10px black;
   
 }
 .quote-wrapper .quote-body {
   width: 100%;
   height: 200px;
-  background-color: #fff;
+  background-color: #ddd;
   border-radius: 10px;
   padding: 50px 35px;
   border: 5px solid black;
   margin-bottom: 30px;
-  
 }
 
 .quote-wrapper .quote-body .icon-quote {
@@ -60,7 +61,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 12px;
-  border-top: 1px solid white;
+  border-top: 1px solid black;
   padding: 7px 0;
 }
 .quote-wrapper .quote-body .quote-buttons .btn button {
@@ -72,6 +73,17 @@ body {
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
+ 
+}
+.quote-buttons {
+  position: relative;
+}
+#translate-btn:hover::before {
+  content: url(../img/ugly\ yoda\ Small_ccexpress.png);
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  bottom: 0; 
 }
 
 .footer p {
@@ -82,9 +94,78 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background-color: blueviolet;
+  background-color: #655D8A;
 }
 ::-webkit-scrollbar {
-  background-color: #ddd;
+  background-color: #655D8A;
   border-radius: 5px;
+}
+.container {
+  margin: 10px auto;
+ 
+}
+.carousel, .quote-wrapper .quote-heading, .quote-wrapper .quote-body  {
+  box-shadow: 4px 4px 4px black;
+  border-radius: 5px;
+}
+
+
+.carousel {
+  border-radius: 10px;
+  border: 5px solid black;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+}
+.slider {
+  height: 100%;
+  display: flex;
+  width: 400%;
+  transition:  all 0.3s;
+}
+.slider section {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.controls .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.controls .arrow span {
+  font-size: 60px;
+}
+
+.arrow.left {
+  left:10px;
+  
+}
+.arrow.right {
+  right: 10px;
+}
+.controls ul {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%);
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.controls ul li {
+  width: 8px;
+  height: 8px;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin: 10px;
+  cursor: pointer;
+  background: black;
+}
+.controls ul li.selected {
+  background: transparent;
 }
