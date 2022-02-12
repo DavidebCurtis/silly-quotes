@@ -4,15 +4,10 @@ const firstQuoteObj = [
     author: "Lewis Grizzard",
   },
 ];
-
 JSON.stringify(firstQuoteObj);
-console.log(firstQuoteObj);
 
 let firstQuoteStr = firstQuoteObj[0].text;
 let firstQuoteAuth = "- " + firstQuoteObj[0].author;
-
-console.log(firstQuoteStr);
-console.log(firstQuoteAuth);
 
 const quoteArray = firstQuoteStr.split(" ");
 const spacerQuoteArray = [
@@ -144,8 +139,23 @@ const spacerQuoteArray = [
   "%20",
 ];
 
-var arrayCombined = $.map(quoteArray, function (element, index) {
-  return [element, spacerQuoteArray[index]];
+var arrayCombined = $.map(quoteArray, function (stringVal, index) {
+  return [stringVal, spacerQuoteArray[index]];
 });
 
-console.log(arrayCombined);
+let callString = arrayCombined.join("");
+console.log(callString);
+
+let apiUrl = "https://api.funtranslations.com/translate/yoda.json?text=";
+
+let fetchFinalQuote = function () {
+  fetch(apiUrl + callString).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        console.log(data);
+      });
+    }
+  });
+};
+
+fetchFinalQuote();
