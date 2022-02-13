@@ -1,36 +1,25 @@
-var newQuotebutton = document.querySelector("#new-quote-button");
-var firstQuotecontainer = document.querySelector("#first-quote-container");
+var newQuotebutton = document.querySelector("#btn-1");
 var firstQuotep = document.querySelector("#first-quote");
+var authorFirstquote = document.querySelector("#author-1");
 
 
 
-var getQuotes = function () {}
+var getQuotes = function () {
 var apiUrl = "https://goquotes-api.herokuapp.com/api/v1/random?count=1";
 
 fetch(apiUrl)
 .then(function (response) {
+    if(response.ok) {
 response.json().then(function(data){
-    // return (data);
-    // console.log(data.quotes[0]);
  
-    // firstQuotecontainer.innerHTML = data.quotes[0];
-    displayQuotes(data)
+firstQuotep.innerText = data.quotes[0].text;
+authorFirstquote .innerText = (data.quotes[0].author);
+
+var firstQuote = data.quotes[0].text;
+return(firstQuote);
 })
-
+    }
 })
-var displayQuotes = function (data) {
-
-//    console.log(data.quotes[0].text)
-// console.log(data);
-// console.log(data.quotes[0]);
-// // console.log(data.quotes.text);
-// var quote = data.quotes[0];
-// const myJSON = JSON.stringify(data.quotes[0]);
-
-firstQuotep.innerHTML = data.quotes[0].text;
-
 }
 
-
-// newQuotebutton.addEventListener("click" , getQuotes);
-newQuotebutton.addEventListener("click" , displayQuotes);
+newQuotebutton.addEventListener("click",getQuotes);
