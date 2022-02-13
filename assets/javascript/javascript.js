@@ -1,5 +1,5 @@
 var newQuotebutton = document.querySelector("#btn-1");
-var firstQuotep = document.querySelector("#first-quote");
+// var firstQuotep = document.querySelector("#first-quote");
 var authorFirstquote = document.querySelector("#author-1");
 
 
