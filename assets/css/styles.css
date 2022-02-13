@@ -12,7 +12,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #655D8A;
-  background: radial-gradient(var(--glass-col, #ddd,#655D8A)) content-box, conic-gradiant($g)
 }
 .quote-wrapper {
   width: 450px; 
