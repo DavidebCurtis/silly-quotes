@@ -2,9 +2,11 @@
 
 
 ## User Story
-AS 
-I WANT 
-So I CAN 
+AS a user who wants to have fun
+I WANT to generate a random quote and translate it to
+a random language.
+So I CAN have a good laugh and copy generated quote 
+to send to family and friends.
 
 
 ### Aceptance Criteria
@@ -17,6 +19,15 @@ So I CAN
 * Javascript
 
 ### Credits
-*https://goquotes.docs.apiary.io/#
-*https://funtranslations.com/api/
+
+*[Go Quotes Api](https://goquotes.docs.apiary.io/#)
+*[Fun Translations Api](https://funtranslations.com/api/#)
+
+
+### Usage
+image will be placed here!!
+
+### License
+
+
 
