@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,13 @@
   <link href="assets/css/styles.css" rel="stylesheet">
   <title>Silly Quotes</title>
 </head>
+
 <body>
   <div class="quote-wrapper">
     <div class="quote-heading">
       <h2>Silly Quotes!</h2>
     </div>
-    <div class="quote-body">
+    <div class="quote-body" id="first-quote-container">
       <div class="icon-quote">
         <span class="quote">"We should try and finish this project by thursday so we have something to show"</span>
       </div>
@@ -21,7 +23,7 @@
       </div>
       <div class="quote-buttons">
         <div class="btn">
-          <button class="quote-btn">New Quote</button>
+          <button id="new-quote-button" class="quote-btn">New Quote</button>
         </div>
 
       </div>
@@ -29,10 +31,10 @@
 
     <div class="quote-body">
       <div class="icon-quote">
-        <span class="quote">"And finish this project by thursday so we have something to show,  we should try"</span>
+        <span class="quote">"And finish this project by thursday so we have something to show, we should try"</span>
       </div>
       <div class="author">
-          -Yoda
+        -Yoda
       </div>
       <div class="quote-buttons">
         <div class="btn">
@@ -41,12 +43,15 @@
 
       </div>
     </div>
-      <div class="footer">
-        <p>Powered by <strong>Rebooting Rebels</strong> </p>
-      </div>
+    <div class="footer">
+      <p>Powered by <strong>Rebooting Rebels</strong> </p>
     </div>
   </div>
- 
-  
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./assets/javascript/javascript.js"></script>
 </body>
+
 </html>
