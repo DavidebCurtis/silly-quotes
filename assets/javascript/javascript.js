@@ -1,4 +1,6 @@
 var secondQuote = document.querySelector("#second-quote");
+var authorTwo = document.querySelector("#author-2");
+var btnTwo = document.querySelector("#btn-2");
 
 const firstQuoteObj = [
   {
@@ -6,6 +8,7 @@ const firstQuoteObj = [
     author: "Lewis Grizzard",
   },
 ];
+
 JSON.stringify(firstQuoteObj);
 
 // settings values to variables
@@ -168,9 +171,11 @@ let fetchFinalQuote = function () {
       response.json().then(function (data) {
         // print quote and author to page
         secondQuote.innerText = data.contents.translated;
+        authorTwo.innerText = firstQuoteAuth;
       });
     }
   });
 };
 
-fetchFinalQuote();
+// call function on button click
+btnTwo.addEventListener("click", fetchFinalQuote);
