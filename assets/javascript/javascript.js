@@ -165,7 +165,7 @@ let fetchFinalQuote = function () {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data.contents.translated);
-        document.body.innerHTML = data.contents.translated;
+        // document.body.innerHTML = data.contents.translated;
       });
     }
   });
