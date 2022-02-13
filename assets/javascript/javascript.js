@@ -1,3 +1,5 @@
+var secondQuote = document.querySelector("#second-quote");
+
 const firstQuoteObj = [
   {
     text: "You call to a dog and a dog will break its neck to get to you. Dogs just want to please. Call to a cat and its attitude is, 'What's in it for me?'",
@@ -164,13 +166,11 @@ let fetchFinalQuote = function () {
   fetch(apiUrl + callString).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data.contents.translated);
-        // document.body.innerHTML = data.contents.translated;
+        // print quote and author to page
+        secondQuote.innerText = data.contents.translated;
       });
     }
   });
 };
-
-// print quote and author to page
 
 fetchFinalQuote();
