@@ -31,8 +31,4 @@ rightArrow.addEventListener('click', function(){
   slider.style.transform = 'translate(' + (sectionIndex) * -25 + '%)';
 })
 
-
-
-
-
 //End of slide show
