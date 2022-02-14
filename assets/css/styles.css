@@ -103,10 +103,8 @@ body {
   margin: 10px auto;
 }
 .carousel,
-.quote-wrapper,
-.quote-heading,
-.quote-wrapper,
-.quote-body {
+.quote-wrapper .quote-heading,
+.quote-wrapper .quote-body {
   box-shadow: 4px 4px 4px black;
   border-radius: 5px;
 }
