@@ -10,8 +10,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #655d8a;
-  background: radial-gradient(var(--glass-col, #ddd, #655d8a)) content-box,
-    conic-gradiant(g);
 }
 
 .quote-wrapper {
