@@ -33,8 +33,8 @@ THEN I can save the final quote on Local Storage into "Favorite Quotes"
 * [Fun Translations Api](https://funtranslations.com/api/#).
 
 
-### Usage
-image will be placed here!!
+### Application
+![alt-text](https://github.com/DavidebCurtis/silly-quotes/blob/first-fetch-request/assets/img/silly-quotes.png)
 
 ### License
 
