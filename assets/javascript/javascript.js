@@ -5,9 +5,9 @@ var authorFirstquote = document.querySelector("#author-1");
 var secondQuote = document.querySelector("#second-quote");
 var authorTwo = document.querySelector("#author-2");
 var translateQuoteButton = document.querySelector("#btn-2");
-
+var savedQuotes = document.querySelector("#saved-quotes");
 // picks the person the quote will be translated to
-var persons = ["yoda", "chef"];
+var persons = ["Yoda,Chef"];
 var person = persons[Math.floor(Math.random() * persons.length)];
 
 // quote data global variable
@@ -54,6 +54,7 @@ const handleAPICalls = async () => {
   console.log("Quotes fetched");
   console.log(quoteData);
   return quoteData;
+  // saveToLocal(quoteData )
 };
 
 // on translate button click insert translated quote and author
@@ -93,4 +94,10 @@ rightArrow.addEventListener("click", function () {
   indicatorParents.children[sectionIndex].classList.add("selected");
   slider.style.transform = "translate(" + sectionIndex * -25 + "%)";
 });
+
+
+//save to local storage
+function saveToLocal (quoteData) {
+console.log(quoteData);
+}
 //End of slide show
