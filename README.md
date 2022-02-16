@@ -11,17 +11,14 @@ to send to family and friends.
 
 
 ### Aceptance Criteria
-GIVEN a quote generator with two boxes of text, the first one for a random quote, the second one for translating quote into a random language.
+GIVEN a quote generator with two boxes of text, the first one for a random quote, the second one for translating quote into a random language (options for languages are Yoda and Chef)
 WHEN I click on button "New Quote"
 THEN  a random quote is generated, followed by the author who created it.
 WHEN I click on the button "Translate Quote"
 THEN I am presented with the quote generated from the first box, translated into a random language 
 WHEN I click the button "Save"
 THEN I can save the final quote on Local Storage into "Favorite Quotes"
-WHEN I click on the "Delete"
-THEN I can delete the quote from local storage.
-WHEN I click the button "Copy"
-THEN I am able to copy the quote and send it to friends and family.
+
 
 
 ### Technologies Used
