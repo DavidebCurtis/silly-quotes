@@ -85,7 +85,6 @@ function displaySavedQuotes() {
   for (let index = 0; index < savedQuotes.length; index++) {
     console.log(savedQuotes[index].quote);
     const makeSection = document.createElement("section");
-    // makeSection.classList.add(".quotes");
     makeSection.innerText = savedQuotes[index].quote;
     slider.appendChild(makeSection);
   }
