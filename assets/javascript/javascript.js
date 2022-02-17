@@ -6,6 +6,8 @@ var secondQuote = document.querySelector("#second-quote");
 var authorTwo = document.querySelector("#author-2");
 var translateQuoteButton = document.querySelector("#btn-2");
 
+const slider = document.querySelector(".slider");
+
 // picks the person the quote will be translated to
 var persons = ["yoda", "chef"];
 var person = persons[Math.floor(Math.random() * persons.length)];
@@ -60,12 +62,36 @@ const handleAPICalls = async () => {
 translateQuoteButton.addEventListener("click", async () => {
   const data = quoteData;
   secondQuote.innerText = data.secondQuote.contents.translated;
-  authorTwo.innerText = data.firstQuote.quotes[0].author;
+  authorTwo.innerText = data.secondQuote.contents.translation;
+  saveQuotes();
+  displaySavedQuotes();
 });
 
-//This section is for the slide show
-const slider = document.querySelector(".slider");
+var savedQuotes = JSON.parse(localStorage.getItem("saved quotes")) || [];
 
+// save quote to localstorage
+function saveQuotes() {
+  const data = quoteData;
+  const saved = {
+    quote: data.secondQuote.contents.translated,
+    author: data.firstQuote.quotes[0].author,
+  };
+  savedQuotes.push(saved);
+  localStorage.setItem("saved quotes", JSON.stringify(savedQuotes));
+}
+
+// load quote to element
+function displaySavedQuotes() {
+  for (let index = 0; index < savedQuotes.length; index++) {
+    console.log(savedQuotes[index].quote);
+    const makeSection = document.createElement("section");
+    // makeSection.classList.add(".quotes");
+    makeSection.innerText = savedQuotes[index].quote;
+    slider.appendChild(makeSection);
+  }
+}
+
+//This section is for the slide show
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
 const indicatorParents = document.querySelector(".controls ul");
