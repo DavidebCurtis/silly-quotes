@@ -91,15 +91,15 @@ function saveQuotes() {
 
 
 // save quote to localstorage
-function saveQuotes() {
-  const data = quoteData;
-  const saved = {
-    quote: data.secondQuote.contents.translated,
-    author: data.firstQuote.quotes[0].author,
-  };
-  savedQuotes.push(saved);
-  localStorage.setItem("saved quotes", JSON.stringify(savedQuotes));
-}
+// function saveQuotes() {
+//   const data = quoteData;
+//   const saved = {
+//     quote: data.secondQuote.contents.translated,
+//     author: data.firstQuote.quotes[0].author,
+//   };
+//   savedQuotes.push(saved);
+//   localStorage.setItem("saved quotes", JSON.stringify(savedQuotes));
+// }
 
 // load quote to element
 function displaySavedQuotes() {
