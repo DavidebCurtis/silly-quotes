@@ -8,7 +8,9 @@ var translateQuoteButton = document.querySelector("#btn-2");
 
 const slider = document.querySelector(".slider");
 
+
 const alertPlaceholder = document.querySelector("#alert-placeholder");
+
 
 // picks the person the quote will be translated to
 var persons = ["yoda", "chef"];
@@ -65,12 +67,15 @@ translateQuoteButton.addEventListener("click", async () => {
   const data = quoteData;
   secondQuote.innerText = data.secondQuote.contents.translated;
   authorTwo.innerText = data.secondQuote.contents.translation;
+
   console.log(authorTwo);
+
   saveQuotes();
   displaySavedQuotes();
 });
 
 var savedQuotes = JSON.parse(localStorage.getItem("saved quotes")) || [];
+
 
 // save quote to localstorage
 function saveQuotes() {
@@ -83,6 +88,43 @@ function saveQuotes() {
   savedQuotes.push(saved);
   localStorage.setItem("saved quotes", JSON.stringify(savedQuotes));
 }
+
+
+// save quote to localstorage
+function saveQuotes() {
+  const data = quoteData;
+  const saved = {
+    quote: data.secondQuote.contents.translated,
+    author: data.firstQuote.quotes[0].author,
+  };
+  savedQuotes.push(saved);
+  localStorage.setItem("saved quotes", JSON.stringify(savedQuotes));
+}
+
+// load quote to element
+function displaySavedQuotes() {
+  for (let index = 0; index < savedQuotes.length; index++) {
+    console.log(savedQuotes[index].quote);
+    const makeSection = document.createElement("section");
+    makeSection.innerText = savedQuotes[index].quote;
+    slider.appendChild(makeSection);
+  }
+}
+
+//This section is for the slide show
+const leftArrow = document.querySelector(".left");
+const rightArrow = document.querySelector(".right");
+const indicatorParents = document.querySelector(".controls ul");
+var sectionIndex = 0;
+
+document.querySelectorAll(".controls li").forEach(function (indicator, ind) {
+  indicator.addEventListener("click", function () {
+    sectionIndex = ind;
+    document.querySelector(".controls .selected").classList.remove("selected");
+    indicator.classList.add("selected");
+    slider.style.transform = "translate(" + sectionIndex * -25 + "%)";
+  });
+});
 
 // load quote to element
 function displaySavedQuotes() {
